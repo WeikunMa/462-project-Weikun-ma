@@ -1,0 +1,14 @@
+Summary for the Visual-SLAM
+I think the SLAM system operates according to the following key steps:
+1. Map initialization
+First map initialization using two frames is used to build the 3D point map.
+The geometric relationships between these frames are determined based on ORB feature matching using homography and fundamental matrices.
+Apply s-triangulation to generate 3D world points.
+2. Tracking
+This script estimates the camera pose by matching features in new frames to features in the last keyframe using ORB features.
+It refines camera pose estimation by tracking local map points and performing motion-only bundle adjustments.
+3. Local mapping
+New keyframes are added, local mapping refines the keyframe's pose and map points are updated using local bundle adjustments.
+It ensures robust mapping by considering observations across multiple keyframes and effectively managing outliers.
+4. Loop closure
+Using a loop closing mechanism, errors accumulated over time are corrected by detecting revisited scenes. This step involves creating and querying a feature bag model to identify previously visited locations.
