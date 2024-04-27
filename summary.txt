@@ -1,0 +1,17 @@
+summary report:
+
+For the second step of the project, I designed a comprehensive plan to capture data for scene reconstruction and camera trajectory prediction. Initially, I chose to shoot short videos in a well-lit environment, choosing gym settings to ensure optimal brightness and clarity. Given my limited expertise in querying device resolution and details with MATLAB, I made the strategic decision to utilize the Potplayer software for frame-by-frame screenshot extraction. Additionally, I adjusted the photo resolution to match the specifications outlined in the initial steps, which was 640x480 pixels.
+
+To ensure efficient processing, I reduced the video quality to 60%. Then I carefully ran the code from the previous step, gradually improving it to correct the errors I encountered. This meticulous approach allows for seamless integration of newly captured data into existing frameworks.
+
+During the execution phase, the SLAM process starts by replacing the dataset with newly captured images. Leveraging images, SLAM efficiently reconstructs scenes and predicts camera trajectories, reflecting workflows established in the Visual-SLAM paradigm.
+
+The initiation of the mapping process involves building a robust map containing 3D world points. By identifying correspondences in two frames, the geometric transformation model facilitates map initialization and ensures the precision and accuracy of the reconstruction process.
+
+Subsequent steps include loop detection, fine reconstruction through bundle adjustment, and iterative tracking to determine keyframe insertion points. Perform local mapping operations on each keyframe, promoting continuous refinement and enhancement of map properties.
+
+Loop closure detection plays a key role in detecting and closing loops in reconstruction scenarios. The SLAM process ensures the robustness and accuracy of trajectory predictions by identifying visually similar candidate loops in the database.
+
+To verify the efficacy of ORB-SLAM, the optimized camera trajectories were rigorously compared with ground truth data. This comparative analysis is a litmus test for evaluating the accuracy and reliability of SLAM implementations.
+
+I had some problems during operation. Later, after asking the teacher and searching methods, I tried to reduce the image quality and then modified the definition part of the code about finding the key truth. I also modified the design of the maximum number of scanned images in the code and it went smoothly. The problem was solved and the results were successfully run.
